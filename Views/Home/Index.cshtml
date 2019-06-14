@@ -1,0 +1,24 @@
+﻿@model List<Chef>
+
+<h1>Chefs | <a href="/dishes">Dishes</a></h1>
+<button><a href="/newchef">Add a Chef</a></button>
+
+<h2>Check out our roster of Chefs</h2>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th># of Dishes</th>
+    </tr>
+    @{
+        foreach(Chef i in @Model)
+        {
+            <tr>
+                <td>@i.Name</td>
+                <td>@i.Age</td>
+                <td>@i.Dishes.Count</td>
+            </tr>
+        }
+    }
+</table>
